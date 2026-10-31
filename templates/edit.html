@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Post</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h2>Edit Post</h2>
+
+    <div class="card">
+        <form method="post">
+            <input name="title" value="{{ post[1] }}" maxlength="100" style="margin-bottom:14px">
+            <textarea name="content" rows="8" style="margin-bottom:14px">{{ post[2] }}</textarea>
+            <button type="submit">Update</button>
+        </form>
+    </div>
+
+    <p>{{ msg }}</p>
+
+    <a href="/post/{{ post[0] }}">&larr; Cancel</a>
+</body>
+</html>

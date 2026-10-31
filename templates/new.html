@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>New Post</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h2>New Post</h2>
+
+    <div class="card">
+        <form method="post">
+            <input name="title" placeholder="Title" maxlength="100" style="margin-bottom:14px">
+            <textarea name="content" placeholder="Write something..." rows="8" style="margin-bottom:14px"></textarea>
+            <button type="submit">Publish</button>
+        </form>
+    </div>
+
+    <p>{{ msg }}</p>
+
+    <a href="/">&larr; Back to Home</a>
+</body>
+</html>

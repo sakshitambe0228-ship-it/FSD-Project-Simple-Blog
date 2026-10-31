@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ post[1] }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+</head>
+<body>
+   <div class="card">
+    <h2>{{ post[1] }}</h2>
+    <small>{{ post[3].strftime("%d %b %Y, %I:%M %p") }}</small>
+
+    <p class="post-content">{{ post[2] }}</p>
+
+    <div class="actions">
+        <a class="btn btn-outline" href="/edit/{{ post[0] }}">Edit Post</a>
+
+        <form method="post" action="/delete/{{ post[0] }}">
+            <button type="submit" class="danger">Delete Post</button>
+        </form>
+    </div>
+</div>
+
+<br>
+<a href="/">&larr; Back to Home</a>
+</body>
+</html>

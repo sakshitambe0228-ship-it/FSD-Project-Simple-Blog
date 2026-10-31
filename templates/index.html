@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Blog</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+</head>
+<body>
+   <h1>Simple Blog</h1>
+<p class="center"><a class="btn" href="/new">+ New Post</a></p>
+
+{% if posts %}
+    {% for p in posts %}
+    <div class="card">
+        <h3><a href="/post/{{ p[0] }}">{{ p[1] }}</a></h3>
+        <small>{{ p[2].strftime("%d %b %Y, %I:%M %p") }}</small>
+    </div>
+    {% endfor %}
+{% else %}
+    <p class="center">No posts yet. Write your first one!</p>
+{% endif %}
+</body>
+</html>
